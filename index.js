@@ -47,11 +47,13 @@ const products = [
   }
 ];
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/api/products', (req, res) => {
   const baseUrl = getBaseUrl(req);
   const productsWithFullUrls = products.map(product => ({
     ...product,
-    image: `${baseUrl}/images/${product.image}`
+    image: `${baseUrl}/${product.image}`
   }));
   res.json(productsWithFullUrls);
 });
@@ -62,13 +64,10 @@ app.get('/api/products/:id', (req, res) => {
   if (!product) return res.status(404).send('Product not found');
   const productWithFullUrl = {
     ...product,
-    image: `${baseUrl}/images/${product.image}`
+    image: `${baseUrl}/${product.image}`
   };
   res.json(productWithFullUrl);
 });
-
-// Serve static files from the 'images' directory
-app.use('/images', express.static('images'));
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

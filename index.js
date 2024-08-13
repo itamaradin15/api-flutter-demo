@@ -45,6 +45,24 @@ const products = [
     price: 18.50,
     onSale: false,
     image: "organic-flake.png"
+  },
+  {
+    id: 5,
+    name: "Cacao nibs orgánicos cubiertos con jarabe de yacón",
+    brand: "Healthy Superfoods",
+    weight: "180 gr",
+    price: 16.00,
+    onSale: false,
+    image: "cacao-nib.png"
+  },
+  {
+    id: 6,
+    name: "Cereal snack orgánico con maca",
+    brand: "Healthy Superfoods",
+    weight: "300 gr",
+    price: 18.50,
+    onSale: false,
+    image: "cereal-snack.png"
   }
 ];
 
